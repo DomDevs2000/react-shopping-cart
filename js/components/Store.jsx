@@ -15,17 +15,20 @@ export const Store = (props) => {
 
     return (
         <>
-            <div>{games.map((game) => {
+            <div className="grid-container">{games.map((game) => {
                 const isInCart = gamesInCart.includes(game.id)
+
 
                 return (
 
-                    <div key={game.id}>
+                    <div className="game-card" key={game.id}>
+                        <div>
                         <h2>{game.title}</h2>
                         <img src={game.image} alt=''></img>
                         <p>{game.description}</p>
                         <p>{game.price} Gil</p>
-                        <button disabled={isInCart} onClick={() => addToBasket(game)}>Add to Basket</button>
+                        <button className="game-card-btn" disabled={isInCart} onClick={() => addToBasket(game)}>Add to Basket</button>
+                        </div>
                     </div>
                 );
             })}</div>

@@ -12,7 +12,7 @@ export const Checkout = (props) => {
         return acc
     }, 0)
     return (
-        <div className="basket">
+        <div className=''>
 
             <h1>Basket</h1>
             <a href='/'><button>Go Back</button></a>

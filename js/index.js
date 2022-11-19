@@ -47,7 +47,7 @@ const games = [
 const StorePage = (props) => {
     const {addToBasket, removeFromBasket} = props;
     return (
-        <div className="page1">
+        <div className="store-page">
             <Navbar/>
             <Store addToBasket={addToBasket}></Store>
             <Basket removeFromBasket={removeFromBasket}></Basket>

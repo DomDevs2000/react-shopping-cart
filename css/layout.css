@@ -4,12 +4,84 @@
     font-family: 'Helvetica', "sans-serif";
 }
 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+.store-page {
+    display: grid;
+    grid-template-areas:
+"header header sidebar"
+    "content content sidebar"
+    "content content sidebar";
+    grid-template-columns: 4fr 3fr 1fr 0fr;
+    grid-template-rows: 50px 1fr 70px;
+}
+
 h1 {
     font-size: 24px;
-    color: #81B4DE;
+
 }
 
 li {
     list-style: none;
+}
 
+.basket {
+    grid-area: sidebar;
+}
+.navbar-flex {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 16px;
+}
+
+.navbar {
+    grid-area: header;
+    background-color: black;
+    color: white;
+    font-size: 12px;
+
+}
+
+
+.grid-container {
+    grid-area: content;
+    width: 400px;
+    height: 200px;
+    grid-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+
+
+}
+
+.game-card {
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgb(50, 205, 50);
+
+}
+
+.game-card-btn {
+    height: 50px;
+    width: 100px;
+    background-color: black;
+    border-radius: 25px;
+    color: white
+}
+
+.basket {
+    text-align: center;
+    grid-area: sidebar;
+    background-color: rgb(50, 205, 50);
+    height: 100vh;
+    width: 400px;
 }
