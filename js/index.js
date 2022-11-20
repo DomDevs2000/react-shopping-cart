@@ -6,6 +6,7 @@ import {Basket} from './components/Basket'
 import {StoreContext} from './context/StoreContext'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {CheckoutPage} from './CheckoutPage'
+import {StorePage} from './StorePage'
 
 const app = document.getElementById('app');
 
@@ -44,17 +45,6 @@ const games = [
     }
 ];
 
-const StorePage = (props) => {
-    const {addToBasket, removeFromBasket} = props;
-    return (
-        <div className="store-page">
-            <Navbar/>
-            <Store addToBasket={addToBasket}></Store>
-            <Basket removeFromBasket={removeFromBasket}></Basket>
-        </div>
-    )
-}
-
 const App = () => {
     const [cart, setCart] = useState([])
 
@@ -67,21 +57,15 @@ const App = () => {
         }
     }, []);
 
-
     const addToBasket = (game) => {
         setCart([...cart, game])
-
     }
     const removeFromBasket = (game) => {
         setCart(cart.filter(gameInCart => gameInCart.id !== game.id))
-
-
     }
 
     useEffect(() => {
-
         window.localStorage.setItem('cart', JSON.stringify(cart))
-
     }, [cart]);
 
     return (
@@ -91,18 +75,14 @@ const App = () => {
                     <Route path="/" element={(() => {
                         return <StorePage addToBasket={addToBasket}
                                           removeFromBasket={removeFromBasket}/>
-
                     })()}/>
-
                     <Route path="/checkout" element={(() => {
                         return <CheckoutPage
                             removeFromBasket={removeFromBasket}/>
 
                     })()
                     }/>
-
                 </Routes>
-
             </BrowserRouter>
         </StoreContext.Provider>
     )

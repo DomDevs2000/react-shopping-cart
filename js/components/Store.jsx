@@ -20,7 +20,7 @@ export const Store = (props) => {
 
                 return (
 
-                    <div className="game-card" key={game.id}>
+                    <div className={`game-card ${isInCart ? 'unavailable' : ""}` } key={game.id}>
                         <div className="game-image"><img src={game.image} alt=''/></div>
                         <div className="game-content">
                             <h2>{game.title}</h2>

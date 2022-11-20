@@ -6,27 +6,25 @@
     font-family: 'Helvetica', serif;
 
 }
+
 body {
     background-color: black;
 }
+
 .store-page {
     display: grid;
     grid-template-areas:
     "header header sidebar"
     "content content sidebar"
     "content content sidebar";
-    grid-template-columns: 4fr 4fr 1fr ;
+    grid-template-columns: 4fr 4fr 1fr;
     grid-template-rows: 50px 1fr 70px;
-    background: url('/assets/logo.png') no-repeat 90px 50px;
+    background: url('/assets/logo.png') no-repeat 90px 100px;
     background-size: 250px;
-
-
-
 }
 
 h1 {
     font-size: 24px;
-
 }
 
 li {
@@ -49,8 +47,9 @@ li {
     grid-area: header;
     background-color: black;
     color: white;
-    font-size: 12px;
+    font-size: 10px;
     padding-left: 90px;
+    margin-top: 15px;
 
 }
 
@@ -72,11 +71,17 @@ li {
     padding: 15px;
     width: 430px;
     height: 230px;
-    background-color: rgb(65, 212, 108);
+    background-color: rgba(65, 212, 108, 1.3);
     background-image: url('/assets/controller.png');
     background-size: 150px;
     background-repeat: no-repeat;
     background-position: bottom right;
+}
+.game-card.unavailable {
+    opacity: 0.5;
+}
+.game-card.unavailable button {
+    cursor: default;
 }
 
 .game-image img {
@@ -103,6 +108,7 @@ li {
     font-size: 10px
 }
 
+
 .game-price img {
     margin-right: 10px;
     vertical-align: bottom;
@@ -114,6 +120,8 @@ li {
     border-radius: 25px;
     color: white;
     padding: 0 20px;
+    cursor:pointer;
+
 }
 
 .cta-container {
@@ -131,6 +139,7 @@ li {
     padding: 55px 35px 90px;
 
 }
+
 .basket h3 {
     text-align: center;
 }
@@ -140,18 +149,109 @@ li {
     border-bottom: 1px solid black;
     padding-bottom: 15px;
     padding-top: 15px;
+    padding-left: 15px;
+    align-content: flex-end;
+    justify-content: space-between;
 
 }
+
 .basket li:last-child {
 
     border-bottom: none;
 
 }
-.basket button {
+
+.basket span {
+    font-weight: bolder;
+}
+
+.basket-remove {
     background-color: transparent;
     border: none;
-    cursor:pointer;
+    cursor: pointer;
+}
+
+.basket-continue-btn {
+    min-height: 30px;
+    background-color: black;
+    border-radius: 25px;
+    color: white;
+    padding: 0 20px;
+    cursor: pointer;
+}
+.basket-continue-btn.disabled {
+    cursor: default;
+    opacity: 0.5;
 }
 .basket-no-items {
     opacity: 0.3;
+}
+
+
+.checkout-page {
+    display: grid;
+    grid-template-columns: 4fr 4fr 1fr;
+    grid-template-rows: 50px 1fr 70px;
+    background: url('/assets/logo.png') no-repeat 90px 80px;
+    background-size: 250px;
+
+}
+
+.checkout-basket {
+    background-color: #41d46c;
+    color: white;
+    width: 100vw;
+    margin: 200px 0 0;
+}
+
+.checkout-basket-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.checkout-basket-flex ul {
+    width:50%;
+}
+.checkout-basket-btn {
+    min-height: 30px;
+    background-color: black;
+    border-radius: 25px;
+    color: white;
+    padding: 0 20px;
+    cursor: pointer;
+}
+
+.checkout-basket-remove {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.checkout-basket li {
+    display: flex;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
+    align-content: flex-end;
+    justify-content: space-between;
+}
+
+.checkout-basket li:last-child {
+    border-bottom: none;
+}
+
+.checkout-total {
+    font-size: 16px;
+    font-weight: bold;
+    color: gray;
+}
+.total-price {
+    color: gray;
+
+}
+.total-price span {
+    margin-left: 20px;
+    font-weight: bolder;
+    color: black;
 }

@@ -4,7 +4,6 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development parcel index.html assets/**",
     "build": "parcel build index.html assets/**"
-
   },
   "license": "MIT",
   "dependencies": {

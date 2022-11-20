@@ -7,7 +7,7 @@ export const Basket = (props) => {
     const store = useContext(StoreContext)
     const cart = store.cart
 
-    const totalPrice = cart.reduce((acc,game)=> {
+    const totalPrice = cart.reduce((acc, game) => {
         acc += game.price
         return acc
     }, 0)
@@ -18,20 +18,24 @@ export const Basket = (props) => {
             <h2>Basket</h2>
             <ul>{cart.map((game) => (
                 <li key={game.id}>
-                    <img src={game.image}  alt=""  height={50}/>
+                    <img src={game.image} alt="" height={50}/>
                     <span>{game.title}</span>
                     <p className="game-price"><img src="assets/coins.png" alt="" height={15}/>{game.price} Gil
                     </p>
-                    <button onClick={() => removeFromBasket(game)}><img src="assets/bin.png" alt="remove game" height={20}/></button>
+                    <button className="basket-remove" onClick={() => removeFromBasket(game)}>
+                        <img src="assets/bin.png"
+                             alt="remove game"
+                             height={20}/>
+                    </button>
                 </li>
             ))}</ul>
 
-            {cart.length == 0 &&  <h3 className='basket-no-items'>No Items</h3>  }
+            {cart.length === 0 && <h3 className='basket-no-items'>No Items</h3>}
 
-            {cart.length > 0   &&  <p >Total:{totalPrice}</p>  }
+            {cart.length > 0 && <strong className="total-price">Total <span>{totalPrice}</span></strong>}
 
             <Link to={'/checkout'}>
-                <button disabled={cart.length==0}>Continue</button>
+                <button className={`basket-continue-btn ${cart.length === 0 ? "disabled" : ""}`} disabled={cart.length == 0}>Continue</button>
             </Link>
         </div>
     )
