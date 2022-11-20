@@ -1,10 +1,14 @@
 # Notes 
 
+I used git to store changes so that you can see the changes via git.
+See below for issues I had with installing with npm.
+App is fully functional per instructions, styling isn't 100% correct as the CSS was more time-consuming than the React.
+If I had more time I would write unit-tests using React-testing-library and Jest.
+
 ## Issues
 
-had issues installing due to node-sass not building on newer OSX versions. Fix is to use newer version of node-gyp
-but could not get it working.
-
+Had issues installing due to node-sass not building on newer OSX versions. Fix is to use newer version of node-gyp
+but could not get it working. Since the issue is node-sass had to switch to using standard css. Could not work out webpack config to use standard css so used ParcelJS instead.
 ```
 npm ERR! code 1
 npm ERR! path /Users/aidancarvalhodev/Desktop/Aidan-Carvalho-Tech-Test-Xanda/node_modules/node-sass
@@ -31,4 +35,3 @@ npm ERR! gyp verb command configure []
 
 ```
 
-Since issue is node-sass had to switch to using standard css. Could not work out webpack config to use standard css so used ParcelJS instead
