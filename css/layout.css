@@ -1,24 +1,27 @@
-.xanda-react-trial {
-    text-align: center;
-    padding: 20px;
-    font-family: 'Helvetica', "sans-serif";
-}
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Helvetica', serif;
 
 }
-
+body {
+    background-color: black;
+}
 .store-page {
     display: grid;
     grid-template-areas:
-"header header sidebar"
+    "header header sidebar"
     "content content sidebar"
     "content content sidebar";
-    grid-template-columns: 4fr 3fr 1fr 0fr;
+    grid-template-columns: 4fr 4fr 1fr ;
     grid-template-rows: 50px 1fr 70px;
+    background: url('/assets/logo.png') no-repeat 90px 50px;
+    background-size: 250px;
+
+
+
 }
 
 h1 {
@@ -33,6 +36,7 @@ li {
 .basket {
     grid-area: sidebar;
 }
+
 .navbar-flex {
     display: inline-flex;
     flex-direction: row;
@@ -46,6 +50,7 @@ li {
     background-color: black;
     color: white;
     font-size: 12px;
+    padding-left: 90px;
 
 }
 
@@ -57,31 +62,96 @@ li {
     grid-gap: 20px;
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-
-
+    margin: 140px 90px 0;
 }
 
 .game-card {
-    text-align: center;
-    height: 300px;
-    width: 300px;
-    border-radius: 10px;
-    background-color: rgb(50, 205, 50);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 15px;
+    width: 430px;
+    height: 230px;
+    background-color: rgb(65, 212, 108);
+    background-image: url('/assets/controller.png');
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
 
+.game-image img {
+    width: 145px;
+    height: 180px;
+}
+
+.game-content {
+    min-width: 245px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.game-description {
+    font-weight: lighter;
+    font-size: 12px;
+
+}
+
+.game-price {
+    font-weight: bold;
+    font-size: 10px
+}
+
+.game-price img {
+    margin-right: 10px;
+    vertical-align: bottom;
 }
 
 .game-card-btn {
-    height: 50px;
-    width: 100px;
+    min-height: 30px;
     background-color: black;
     border-radius: 25px;
-    color: white
+    color: white;
+    padding: 0 20px;
+}
+
+.cta-container {
+    display: flex;
 }
 
 .basket {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     grid-area: sidebar;
-    background-color: rgb(50, 205, 50);
+    background-color: rgb(65, 212, 108);
     height: 100vh;
-    width: 400px;
+    width: 375px;
+    padding: 55px 35px 90px;
+
+}
+.basket h3 {
+    text-align: center;
+}
+
+.basket li {
+    display: flex;
+    border-bottom: 1px solid black;
+    padding-bottom: 15px;
+    padding-top: 15px;
+
+}
+.basket li:last-child {
+
+    border-bottom: none;
+
+}
+.basket button {
+    background-color: transparent;
+    border: none;
+    cursor:pointer;
+}
+.basket-no-items {
+    opacity: 0.3;
 }

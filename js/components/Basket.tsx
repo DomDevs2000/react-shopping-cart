@@ -1,5 +1,6 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import {StoreContext} from '../context/StoreContext'
+import {Link} from "react-router-dom";
 
 export const Basket = (props) => {
     const removeFromBasket = props.removeFromBasket
@@ -14,22 +15,24 @@ export const Basket = (props) => {
 
         <div className="basket">
 
-            <h1>Basket</h1>
+            <h2>Basket</h2>
             <ul>{cart.map((game) => (
                 <li key={game.id}>
-                    <h2>{game.title}</h2>
-                    <p>{game.price} Gil</p>
-                    <button onClick={() => removeFromBasket(game)}>Remove</button>
+                    <img src={game.image}  alt=""  height={50}/>
+                    <span>{game.title}</span>
+                    <p className="game-price"><img src="assets/coins.png" alt="" height={15}/>{game.price} Gil
+                    </p>
+                    <button onClick={() => removeFromBasket(game)}><img src="assets/bin.png" alt="remove game" height={20}/></button>
                 </li>
             ))}</ul>
 
-            {cart.length == 0 &&  <h3>No Items</h3>  }
+            {cart.length == 0 &&  <h3 className='basket-no-items'>No Items</h3>  }
 
-            {cart.length > 0   &&  <p>Total:{totalPrice}</p>  }
+            {cart.length > 0   &&  <p >Total:{totalPrice}</p>  }
 
-            <a href={'/checkout'}>
+            <Link to={'/checkout'}>
                 <button disabled={cart.length==0}>Continue</button>
-            </a>
+            </Link>
         </div>
     )
 }

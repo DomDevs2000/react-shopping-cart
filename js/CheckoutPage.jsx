@@ -1,12 +1,13 @@
 import React, {useContext} from 'react';
-import {StoreContext}  from './context/StoreContext'
 import {Checkout} from "./components/Checkout";
 
 export const CheckoutPage = (props) => {
     const {removeFromBasket} = props
-    return(
+    return (
         <>
-            <Checkout removeFromBasket={removeFromBasket}/>
+            <div className="checkout-page">
+                <Checkout removeFromBasket={removeFromBasket}/>
+            </div>
 
         </>
     );

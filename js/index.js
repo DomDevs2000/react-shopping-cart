@@ -1,11 +1,10 @@
-import React, {useState, createContext, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
 import {Navbar} from "./components/Navbar";
 import {Store} from "./components/Store"
 import {Basket} from './components/Basket'
 import {StoreContext} from './context/StoreContext'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import {Checkout} from "./components/Checkout";
 import {CheckoutPage} from './CheckoutPage'
 
 const app = document.getElementById('app');
@@ -15,7 +14,7 @@ const games = [
         title: "Star Wars: Battlefront",
         description: "Immerse Yourself in the Ultimate Star Wars Experience",
         price: 300,
-        image: "public/game1.jpg",
+        image: "assets/game1.jpg",
         id: 1
 
     },
@@ -23,7 +22,7 @@ const games = [
         title: "Dying Light",
         description: "Dying Light is an open world first person survival horror action-adventure video game developed by TechLand",
         price: 500,
-        image: "public/game2.jpg",
+        image: "assets/game2.jpg",
         id: 2
 
     },
@@ -44,6 +43,7 @@ const games = [
 
     }
 ];
+
 const StorePage = (props) => {
     const {addToBasket, removeFromBasket} = props;
     return (
@@ -54,17 +54,18 @@ const StorePage = (props) => {
         </div>
     )
 }
+
 const App = () => {
     const [cart, setCart] = useState([])
 
     useEffect(() => {
         const value = window.localStorage.getItem('cart')
         if (!value) {
-            setCart( [])
+            setCart([])
         } else {
-            setCart( JSON.parse(value))
+            setCart(JSON.parse(value))
         }
-    },[]);
+    }, []);
 
 
     const addToBasket = (game) => {
@@ -75,16 +76,14 @@ const App = () => {
         setCart(cart.filter(gameInCart => gameInCart.id !== game.id))
 
 
-
     }
 
     useEffect(() => {
 
-            window.localStorage.setItem('cart', JSON.stringify(cart))
+        window.localStorage.setItem('cart', JSON.stringify(cart))
 
     }, [cart]);
 
-    console.log(cart)
     return (
         <StoreContext.Provider value={{games, cart}}>
             <BrowserRouter>
@@ -108,6 +107,7 @@ const App = () => {
         </StoreContext.Provider>
     )
 }
+
 
 ReactDOM.render((
     <>

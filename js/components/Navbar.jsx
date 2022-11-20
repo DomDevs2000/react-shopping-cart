@@ -7,7 +7,7 @@ export const Navbar = () => {
         <>
             <header className='navbar'>
                 <div className='navbar-flex'>
-                    <img src='/assets/game1.jpg' alt="">
+                    <img src='assets/telephone.png' alt="">
                     </img>
                     <p>
                         1337 1337 1337
