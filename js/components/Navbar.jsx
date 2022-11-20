@@ -1,8 +1,6 @@
 import React from 'react';
 
 export const Navbar = () => {
-
-
     return (
         <>
             <header className='navbar'>
@@ -12,13 +10,12 @@ export const Navbar = () => {
                     <p>
                         1337 1337 1337
                     </p> <img src="assets/flag.png" alt="">
-                    </img>
+                </img>
                     <p>
                         Try another Castle
                     </p>
                 </div>
             </header>
-
         </>
     )
 }

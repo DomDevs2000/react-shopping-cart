@@ -14,7 +14,6 @@ export const Basket = (props) => {
     return (
 
         <div className="basket">
-
             <h2>Basket</h2>
             <ul>{cart.map((game) => (
                 <li key={game.id}>
@@ -29,13 +28,12 @@ export const Basket = (props) => {
                     </button>
                 </li>
             ))}</ul>
-
             {cart.length === 0 && <h3 className='basket-no-items'>No Items</h3>}
-
             {cart.length > 0 && <strong className="total-price">Total <span>{totalPrice}</span></strong>}
-
             <Link to={'/checkout'}>
-                <button className={`basket-continue-btn ${cart.length === 0 ? "disabled" : ""}`} disabled={cart.length == 0}>Continue</button>
+                <button className={`basket-continue-btn ${cart.length === 0 ? "disabled" : ""}`}
+                        disabled={cart.length == 0}>Continue
+                </button>
             </Link>
         </div>
     )

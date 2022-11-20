@@ -6,11 +6,9 @@ export const Store = (props) => {
     const store = useContext(StoreContext)
     const games = store.games
     const cart = store.cart
-
     const gamesInCart = cart.map((game) => {
         return game.id
     })
-
 
     return (
         <>

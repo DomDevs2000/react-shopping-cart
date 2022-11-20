@@ -1,8 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import ReactDOM from 'react-dom';
-import {Navbar} from "./components/Navbar";
-import {Store} from "./components/Store"
-import {Basket} from './components/Basket'
 import {StoreContext} from './context/StoreContext'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {CheckoutPage} from './CheckoutPage'
@@ -79,7 +76,6 @@ const App = () => {
                     <Route path="/checkout" element={(() => {
                         return <CheckoutPage
                             removeFromBasket={removeFromBasket}/>
-
                     })()
                     }/>
                 </Routes>
@@ -87,7 +83,6 @@ const App = () => {
         </StoreContext.Provider>
     )
 }
-
 
 ReactDOM.render((
     <>
