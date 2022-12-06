@@ -4,6 +4,7 @@ import {StoreContext} from './context/StoreContext'
 import {BrowserRouter, Routes, Route} from "react-router-dom";
 import {CheckoutPage} from './CheckoutPage'
 import {StorePage} from './StorePage'
+import { Analytics } from '@vercel/analytics/react';
 
 const app = document.getElementById('app');
 
@@ -87,5 +88,6 @@ const App = () => {
 ReactDOM.render((
     <>
         <App/>
+        <Analytics/>
     </>
 ), app);
