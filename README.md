@@ -1,6 +1,6 @@
-# User Authentication
+# React Shopping Cart
 
-# What is this project about?
+## What is this project about?
 
 This site is a shopping cart where users can add and remove games from a cart and access the cart on its own separate page.
 Once an item is added to the cart it cannot be added again until it is removed. If an item in the cart is removed from the
