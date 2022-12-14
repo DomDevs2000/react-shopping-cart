@@ -1,9 +1,4 @@
-
-![store-page](/screenshots/react-shopping-cart.png?raw=true "store page" )
-![store-page2](/screenshots/react-shopping-cart2.png?raw=true "store page2" )
-![checkout-page](/screenshots/react-shopping-cart3.png?raw=true "checkout page" )
-
-View this project [Live](https://react-shopping-cart-steel-mu.vercel.app/)
+# User Authentication
 
 # What is this project about?
 
